@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: xyz
+  namespace: argocd
+spec:
+  description: "Project for managing Sealed Secrets installation"
+  # Source Repositories allowed for this project
+  sourceRepos:
+    - "*"
+  # Cluster and namespace destinations this project can deploy to
+  destinations:
+    - namespace: xyz
+      server: https://kubernetes.default.svc
+  # Optionally, specify which kinds of cluster/namespaced resources are allowed
+  # If you trust the chart fully, you can keep them broad:
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  # You can add sync windows, roles, and other constraints as needed

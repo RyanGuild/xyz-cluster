@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  project: xyz
+  source:
+    repoURL: "https://helm.traefik.io/traefik"
+    chart: "traefik"
+    # Check the GitHub repo or helm repo for the latest chart version:
+    # https://github.com/traefik/traefik-helm-chart/releases
+    targetRevision: "10.19.0"
+    helm:
+      releaseName: traefik
+      values: |
+        serviceType: LoadBalancer
+        ingressRoute:
+          dashboard:
+            enabled: true
+            matchRule: PathPrefix(`/dashboard`)
+
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: xyz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  revisionHistoryLimit: 2

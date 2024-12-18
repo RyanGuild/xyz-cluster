@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-workflows
+  namespace: argocd
+spec:
+  project: xyz
+  source:
+    repoURL: "https://argoproj.github.io/argo-helm"
+    chart: "argo-workflows"
+    targetRevision: ">=0.26.0" # pick a stable version or use a semantic version
+    helm:
+      releaseName: "argo-workflows"
+      # Optionally override values here:
+      # values: |
+      #   controller:
+      #     extraEnv:
+      #       - name: ARGO_LOG_LEVEL
+      #         value: debug
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: xyz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
