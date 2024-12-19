@@ -18,7 +18,7 @@ spec:
         ingressRoute:
           dashboard:
             enabled: true
-            matchRule: PathPrefix(`/dashboard`)
+            matchRule: Host(`traefik.ryanguild.local`)
 
   destination:
     server: "https://kubernetes.default.svc"

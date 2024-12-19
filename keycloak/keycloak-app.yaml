@@ -2,20 +2,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: keycloak
-  namespace: argocd     # Argo CD's namespace
+  namespace: argocd
 spec:
   project: xyz
   sources:
   - repoURL: 'https://github.com/keycloak/keycloak-quickstarts.git'
     targetRevision: 26.0.7
     path: 'kubernetes'
-  - path: keycloak/src
-    repoURL: https://github.com/RyanGuild/xyz-cluster
+  - repoURL: https://github.com/RyanGuild/xyz-cluster.git
+    path: keycloak/src
     targetRevision: main
-    
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: xyz   # The namespace in which you want Keycloak deployed
+    namespace: xyz
   syncPolicy:
     automated:
       prune: true
