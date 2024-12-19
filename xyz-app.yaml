@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       name: '{{app}}'
-      namespace: argocd
+      namespace: xyz
     spec:
       project: default
       source:
