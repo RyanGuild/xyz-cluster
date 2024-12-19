@@ -20,7 +20,7 @@ spec:
       source:
         repoURL: https://github.com/ryanguild/xyz-cluster.git
         targetRevision: main
-        path: '{{app}}/{{app}}-app.yaml'
+        path: '{{app}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: xyz
