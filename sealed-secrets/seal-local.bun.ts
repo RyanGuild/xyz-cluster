@@ -13,23 +13,42 @@ await $`mkdir -p ${outputFolder}`;
 
 console.log({ targetFolder, outputFolder });
 
-const localSecrets = $`ls -l ${targetFolder}`.lines();
+const localSecrets = (await Array.fromAsync($`ls -l ${targetFolder}`.lines()))
+    .map((a) => a.split(" ").pop())
 
-for await (const secret of localSecrets) {
-    const secretSplit = secret.split(" ");
-    const secretName = secretSplit[secretSplit.length - 1];
-    if (!secretName) {
-        continue;
-    }
+const rawFiles = localSecrets.filter((a) => !a?.endsWith(".yaml"))
+const manifestFiles = localSecrets.filter((a) => a?.endsWith(".yaml"))
 
+console.log({
+    localSecrets,
+    rawFiles,
+    manifestFiles
+})
+
+for (const secretName of rawFiles) {
+    if (!secretName) continue;
     const secretPath = path.join(targetFolder, secretName);
     const sealedSecretPath = path.join(
         outputFolder,
         `${secretName}-sealed.yaml`,
     );
     console.log({ secretName, secretPath, sealedSecretPath });
-    const { blob, bytes } =
-        await $`kubectl create secret generic ${secretName} --dry-run=client --from-file=${secretPath} -o yaml | kubeseal --controller-namespace=xyz --namespace=xyz  > ${sealedSecretPath}`;
+    await $`kubectl create secret generic ${secretName} --dry-run=client --from-file=${secretPath} -o yaml | kubeseal --controller-namespace=xyz --namespace=xyz  > ${sealedSecretPath}`;
 
+    console.log(`Sealing secret ${secretName}...`);
+}
+
+for (const secretFile of manifestFiles) {
+    if (!secretFile) continue;
+    const secretName = secretFile.split(".yaml")[0]
+    const secretPath = path.join(targetFolder, secretFile);
+    const manifest = await Bun.file(secretPath)
+    const sealedSecretPath = path.join(
+        outputFolder,
+        `${secretName}-sealed.yaml`,
+    );
+    console.log({ secretName, secretPath, sealedSecretPath })
+    const secretExists = $`kubectl get`
+    await $`cat ${secretPath} | kubeseal --controller-namespace=xyz --namespace=xyz > ${sealedSecretPath} `
     console.log(`Sealing secret ${secretName}...`);
 }
