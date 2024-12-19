@@ -16,7 +16,7 @@ spec:
       name: '{{app}}'
       namespace: xyz
     spec:
-      project: default
+      project: xyz
       source:
         repoURL: https://github.com/ryanguild/xyz-cluster.git
         targetRevision: main

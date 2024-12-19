@@ -4,9 +4,9 @@ import path from "node:path";
 
 // Get the first argument from the command line
 const targetFolder = process.argv[2] ||
-    path.join(import.meta.dirname, "local");
+    path.join(import.meta.dirname, '..', "local");
 const outputFolder = process.argv[3] ||
-    path.join(import.meta.dirname, "generated");
+    path.join(import.meta.dirname, '..', "generated");
 
 await $`rm -rf ${outputFolder}`;
 await $`mkdir -p ${outputFolder}`;
