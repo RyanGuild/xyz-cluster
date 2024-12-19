@@ -6,9 +6,9 @@ metadata:
 spec:
   project: xyz
   sources:
-  - repoURL: 'https://github.com/keycloak/keycloak-quickstarts.git'
-    targetRevision: 26.0.7
-    path: 'kubernetes'
+  - repoURL: https://charts.bitnami.com
+    targetRevision: 24.3.1
+    chart: bitnami/keycloak
   - repoURL: https://github.com/RyanGuild/xyz-cluster.git
     path: keycloak/src
     targetRevision: main

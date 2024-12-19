@@ -5,25 +5,16 @@ metadata:
   namespace: argocd
 spec:
   project: xyz
-  source:
-    repoURL: "https://charts.ngrok.com"
+  sources:
+  - repoURL: "https://charts.ngrok.com"
     chart: "ngrok-operator"
     targetRevision: "0.16.4"
     helm:
       releaseName: ngrok
-      values: |
-        credentials:
-          apiKey:
-            valueFrom:
-              secretKeyRef:
-                name: ngrok-apikey
-                key: .ngrok-apikey
-          authtoken:
-            valueFrom:
-              secretKeyRef:
-                name: ngrok-authentoken
-                key: .ngrok-authentoken
-        
+      
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    path: ngrok/src
+    targetRevision: main
   destination:
     server: "https://kubernetes.default.svc"
     namespace: xyz
