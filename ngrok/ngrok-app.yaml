@@ -11,7 +11,6 @@ spec:
     targetRevision: "0.16.4"
     helm:
       releaseName: ngrok
-      
   - repoURL: https://github.com/ryanguild/xyz-cluster.git
     path: ngrok/src
     targetRevision: main
