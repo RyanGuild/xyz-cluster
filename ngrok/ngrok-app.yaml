@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ngrok
+  namespace: argocd
+spec:
+  project: xyz
+  source:
+    repoURL: "https://ngrok.github.io/kubernetes-ingress-controller"
+    chart: "kubernetes-ingress-controller"
+    targetRevision: "0.12.0"
+    helm:
+      releaseName: ngrok
+      values: |
+        credentials:
+          apiKey:
+            valueFrom:
+              secretKeyRef:
+                name: ngrok-credentials
+                key: api-key
+        
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: xyz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  revisionHistoryLimit: 2 

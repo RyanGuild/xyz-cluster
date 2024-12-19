@@ -29,7 +29,7 @@ for await (const secret of localSecrets) {
     );
     console.log({ secretName, secretPath, sealedSecretPath });
     const { blob, bytes } =
-        await $`kubectl create secret generic ${secretName} --dry-run=client --from-file=${secretPath} -o yaml | kubeseal --controller-namespace=xyz  > ${sealedSecretPath}`;
+        await $`kubectl create secret generic ${secretName} --dry-run=client --from-file=${secretPath} -o yaml | kubeseal --controller-namespace=xyz --namespace=xyz  > ${sealedSecretPath}`;
 
     console.log(`Sealing secret ${secretName}...`);
 }

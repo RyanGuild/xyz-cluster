@@ -1,0 +1,21 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "ngrok-authentoken",
+    "namespace": "xyz",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "ngrok-authentoken",
+        "namespace": "xyz",
+        "creationTimestamp": null
+      }
+    },
+    "encryptedData": {
+      "ngrok-authentoken": "AgBNGhRzoSSDJyJbgkdHN3TW2oJSyBcKNsz6PWmDQp+5qvm1HpcSVoJvBdd8sY///aCX/bIiJKvFq/kfneXNtOSjcMtVpEhXY/TDd0Tf9U6K9o2ZfWmNsB1i4KDBtXsU1Wh5/r514VPmOsSDE0TDepbdX6WRRhBOM+Rmqbq5K8u/G3tvK341qvKVl8hXO40kRjRDIePg3niilH61cZGif5foxC+fxk4u45vSYFbWRp27ApMIMreH+ZwQKcK7edj/keT6zMyJlXb+At8jT1y8eN/d8PP3LaTTe1q3qOlyC7WsMTIp3KUnqzPrlTUUoByIM3l1qDG3ku8ESiGUyLNhn+qpc+9MDm2eUjlCWsaJTUgjicpAQ4bpdffwSeuj6IattYVyQxOIxRQZWlafnUWpNENtOsPmjvsLqiOUuhzERzmyfk46hrjCDMbJyDmZNooSAt86xs1ts0KVMnxFgLFKsS9fbt8i2wNF5ZCgZMGKlYROUMOQZV/ruIpggl4/A3w7S1f9/esDGcvqFESJEovuFVj57L84FHin2JJzAHYcj/DZy/iCQX6v9H6ajpqq6hL1q8OhSRz7j5mw5nzIBwC/n0LV7OjQQubXOY9i7AZfBYQ6Bca2BGPC2QdXNq2seYC0nusnjYS7410h616riS7BGa8OjVxc2UJah5TBoJot25I+6P3+dZzx/vX7iZ2mJaI+6jpdtmHj124ROYBvu9IJIeBGUnYFKyuqSbxsCIJkenlsSfFe6s4oY3HDmnM8GwaUPILD"
+    }
+  }
+}
