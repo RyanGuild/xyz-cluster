@@ -6,9 +6,9 @@ metadata:
 spec:
   project: xyz
   source:
-    repoURL: "https://ngrok.github.io/kubernetes-ingress-controller"
-    chart: "kubernetes-ingress-controller"
-    targetRevision: "0.12.0"
+    repoURL: "https://charts.ngrok.com"
+    chart: "ngrok-operator"
+    targetRevision: "0.16.4"
     helm:
       releaseName: ngrok
       values: |
@@ -16,8 +16,13 @@ spec:
           apiKey:
             valueFrom:
               secretKeyRef:
-                name: ngrok-credentials
-                key: api-key
+                name: ngrok-apikey
+                key: ngrok-apikey
+          authtoken:
+            valueFrom:
+              secretKeyRef:
+                name: ngrok-authentoken
+                key: ngrok-authentoken
         
   destination:
     server: "https://kubernetes.default.svc"
