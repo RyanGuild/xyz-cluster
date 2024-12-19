@@ -5,27 +5,24 @@ metadata:
   namespace: argocd
 spec:
   project: xyz
-  generators:
-    - list:
-        elements:
-          - app: traefik
-          - app: ngrok
-          - app: sealed-secrets
-    
-  template:
-    metadata:
-      name: '{{app}}'
-      namespace: xyz
-    spec:
-      project: xyz
-      source:
-        repoURL: https://github.com/ryanguild/xyz-cluster.git
-        targetRevision: main
-        path: '{{app}}'
-      destination:
-        server: https://kubernetes.default.svc
-        namespace: xyz
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
+  sources:
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: traefik
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: ngrok
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: sealed-secrets
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: keycloak
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: xyz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      
