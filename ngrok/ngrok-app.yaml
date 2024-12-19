@@ -17,12 +17,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: ngrok-apikey
-                key: ngrok-apikey
+                key: .ngrok-apikey
           authtoken:
             valueFrom:
               secretKeyRef:
                 name: ngrok-authentoken
-                key: ngrok-authentoken
+                key: .ngrok-authentoken
         
   destination:
     server: "https://kubernetes.default.svc"
