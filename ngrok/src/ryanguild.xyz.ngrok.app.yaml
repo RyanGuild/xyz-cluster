@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: example-service
+                name: traefik
                 port:
                   number: 80
