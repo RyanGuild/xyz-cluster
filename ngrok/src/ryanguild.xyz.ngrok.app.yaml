@@ -10,13 +10,23 @@ spec:
     - host: ryanguild.xyz.ngrok.app
       http:
         paths:
-          - path: /
+          - path: /hello
             pathType: Prefix
             backend:
               service:
                 name: hello
                 port: 
                   number: 80
+    - host: ryanguild.xyz.ngrok.app
+      http:
+        paths:
+          - path: /argocd
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port: 
+                  number: 8080
 ---
 apiVersion: ingress.k8s.ngrok.com/v1alpha1
 kind: NgrokModuleSet
