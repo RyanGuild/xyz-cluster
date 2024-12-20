@@ -56,7 +56,7 @@ kind: Namespace
 metadata:
   name: xyz
 ---
-apiVersion: v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd-ingress
