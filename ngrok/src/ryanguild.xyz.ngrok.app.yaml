@@ -29,17 +29,3 @@ apiVersion: ingress.k8s.ngrok.com/v1alpha1
 kind: NgrokModuleSet
 metadata:
   name: ngrok-module-set
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: argocd-server
-  namespace: argocd
-spec:
-  type: ExternalName
-  externalName: argocd-server.argocd.svc.cluster.local
-  ports:
-    - name: argocd-server
-      protocol: TCP
-      port: 80
-      targetPort: 80
