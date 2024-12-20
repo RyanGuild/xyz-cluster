@@ -13,12 +13,12 @@ spec:
       values: |
         httpRelativePath: /keycloak
         ingress:
+          tls: false
           enabled: true
           ingressClassName: ngrok
           extraHosts: 
-            - ryanguild.xyz.ngrok.app
-          extraPaths:
-            - /keycloak
+            - name: ryanguild.xyz.ngrok.app
+              path: /keycloak
 
   destination:
     server: 'https://kubernetes.default.svc'
