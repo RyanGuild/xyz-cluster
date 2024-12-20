@@ -1,0 +1,21 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "ca.srl",
+    "namespace": "xyz",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "ca.srl",
+        "namespace": "xyz",
+        "creationTimestamp": null
+      }
+    },
+    "encryptedData": {
+      "ca.srl": "AgBRj2stu7U6c8kuO3E3ZdvPI8aBmPaqYwPNZALtNb1UtusZ21JfMAjhi5fsMLTAlVgD2iIEsTRQ6QGXiozsALlvIiOXBtuarIizmAdMab5/hWNmcVZClG5mPOqoKwiTJQTUTZlIZpLTO99Gt5PfZ7LXTv1SI+6FLPJtzlg5XOtNa+hsxiKk8+B5dMn8syOw3fweybb+hO7uR+6i+Vn4yRvBLilTpzyG8+hhlYcdO/hLum/SXyFpu3fdlBHRKLjLPQRSZlAtz8wbVTG+CIFkR/Xj9h171/9rkvRxBuoF27ihI8zpEhoNBSsYEbhflpBCOPhjkaJEVcDLBAwls378bHIS791qW2+BJfHqJZLEShCL/YPX6qaAws5FVOit+hz+4TNhrlTFtro4KrPhp2E3khGG+PtYoumz2c1hMBE/gpMbtMeRrHVMXYGjzTm5KEQmV3GAtrhCFOLqKfZ/FEAJhanaD/ta2g9lXQKJ/rSaEScOVxOXMvRECV68dlJ+SwykYGir2ByrBpczaSVn74CrxBZylMm//hu2k1qqgvEyArVyJgl6xCWy/UkK2WI9q7Tx8GiNVVh1OCrZEVUjJgnW8i56toSSx164IgJQnVzelxdwhKF64E8EtUa3YuLPVvKPmb7nkGusiAR5RrxGuOhsaJUR4UaY/OJnro0xM8Fk3UdPAneRRNlFfTJH99GAjyVUgmRhfNe1jDKovYErCHd6a7C6D9kDlhNTTxzRI9a4Yneyy9j7oqKZ92GOtQ=="
+    }
+  }
+}
