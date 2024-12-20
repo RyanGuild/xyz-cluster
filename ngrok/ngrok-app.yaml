@@ -6,16 +6,24 @@ metadata:
 spec:
   project: xyz
   sources:
-  - repoURL: "https://charts.ngrok.com"
-    chart: "ngrok-operator"
-    targetRevision: "0.16.4"
+  - repoURL: https://charts.ngrok.com
+    chart: ngrok-operator
+    targetRevision: 0.16.4
     helm:
       releaseName: ngrok
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    path: ngrok/src
-    targetRevision: main
+      credentials:
+        authtoken:
+          valueFrom:
+            secretKeyRef:
+              name: ngrok-credentials
+              key: authtoken
+        apikey:
+          valueFrom:
+            secretKeyRef:
+              name: ngrok-credentials
+              key: apikey
   destination:
-    server: "https://kubernetes.default.svc"
+    server: https://kubernetes.default.svc
     namespace: xyz
   syncPolicy:
     automated:
