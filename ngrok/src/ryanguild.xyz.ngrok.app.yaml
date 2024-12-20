@@ -24,7 +24,8 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argocd-server
+                name: svc/argocd-server
+                namespace: argocd
                 port: 
                   number: 8080
 ---
