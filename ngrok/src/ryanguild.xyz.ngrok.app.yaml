@@ -6,14 +6,11 @@ metadata:
     k8s.ngrok.com/modules: ngrok-module-set
 spec:
   ingressClassName: ngrok
+  defaultBackend:
+    service:
+      name: hello
+      port: 
+        number: 80
   rules:
     - host: ryanguild.xyz.ngrok.app
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: hello
-                port:
-                  number: 80
+      
