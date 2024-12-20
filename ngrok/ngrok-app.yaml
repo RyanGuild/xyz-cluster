@@ -15,6 +15,10 @@ spec:
         credentials:
           secret:
             name: ngrok-credentials
+        domains:
+          - name: ryanguild.xyz.ngrok.app
+            certificate:
+              managed: true
   destination:
     server: https://kubernetes.default.svc
     namespace: xyz
