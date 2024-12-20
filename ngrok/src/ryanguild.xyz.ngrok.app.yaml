@@ -17,9 +17,6 @@ spec:
                 name: hello
                 port: 
                   number: 80
-    - host: ryanguild.xyz.ngrok.app
-      http:
-        paths:
           - path: /argocd
             pathType: Prefix
             backend:
