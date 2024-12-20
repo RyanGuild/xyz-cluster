@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-backend
+  namespace: xyz
+spec:
+  selector:
+    matchLabels:
+      app: hello-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-backend
+    spec:
+      containers:
+      - name: hello
+        image: strm/helloworld-http
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-backend
+  namespace: xyz
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: hello-backend 
