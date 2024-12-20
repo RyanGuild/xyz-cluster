@@ -56,14 +56,16 @@ kind: Namespace
 metadata:
   name: xyz
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: v1
+kind: Service
 metadata:
-  name: argocd-ingress
+  name: argocd-server
   namespace: argocd
 spec:
-  defaultBackend:
-    service:
-      name: argocd-server
-      port:
-        number: 443
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: argocd-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
