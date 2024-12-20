@@ -19,6 +19,9 @@ spec:
           - name: ryanguild.xyz.ngrok.app
             certificate:
               managed: true
+  - repoURL: https://github.com/ryanguild/xyz-cluster
+    path: ngrok/src
+    targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: xyz
