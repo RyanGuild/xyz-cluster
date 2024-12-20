@@ -55,3 +55,15 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: xyz
+---
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+spec:
+  defaultBackend:
+    service:
+      name: argocd-server
+      port:
+        number: 443
