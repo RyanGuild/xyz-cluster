@@ -39,6 +39,7 @@ spec:
   type: ExternalName
   externalName: argocd-server.argocd.svc.cluster.local
   ports:
-    - protocol: TCP
+    - name: argocd-server
+      protocol: TCP
       port: 8080
       targetPort: 8080
