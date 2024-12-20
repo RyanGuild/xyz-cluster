@@ -15,8 +15,10 @@ spec:
         ingress:
           enabled: true
           ingressClassName: ngrok
-          hostname: ryanguild.xyz.ngrok.app
-          pathType: Prefix
+          extraHosts: 
+            - ryanguild.xyz.ngrok.app
+          extraPaths:
+            - /keycloak
 
   destination:
     server: 'https://kubernetes.default.svc'
