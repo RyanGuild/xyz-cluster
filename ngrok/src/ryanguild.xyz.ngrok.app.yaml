@@ -29,3 +29,8 @@ apiVersion: ingress.k8s.ngrok.com/v1alpha1
 kind: NgrokModuleSet
 metadata:
   name: ngrok-module-set
+modules:
+  headers:
+    request:
+      add:
+        host: ryanguild.xyz.ngrok.app
