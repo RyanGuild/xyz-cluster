@@ -17,11 +17,11 @@ spec:
                 name: hello
                 port: 
                   number: 80
-          - path: /
+          - path: /keycloak
             pathType: Prefix
             backend:
               service:
-                name: argocd-server
+                name: keycloak
                 port: 
                   number: 80
 ---
