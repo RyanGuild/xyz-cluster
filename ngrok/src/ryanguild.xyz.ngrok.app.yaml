@@ -23,7 +23,7 @@ spec:
               service:
                 name: argocd-server
                 port: 
-                  number: 8080
+                  number: 80
 ---
 apiVersion: ingress.k8s.ngrok.com/v1alpha1
 kind: NgrokModuleSet
@@ -41,5 +41,5 @@ spec:
   ports:
     - name: argocd-server
       protocol: TCP
-      port: 8080
+      port: 80
       targetPort: 8080
