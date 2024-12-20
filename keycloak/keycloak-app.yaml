@@ -9,6 +9,8 @@ spec:
   - repoURL: https://charts.bitnami.com/bitnami
     targetRevision: "17.3.2"
     chart: keycloak
+    values: |
+      httpRelativePath: /keycloak
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
