@@ -12,6 +12,12 @@ spec:
     helm:
       values: |
         httpRelativePath: /keycloak
+        ingress:
+          enabled: true
+          ingressClassName: ngrok
+          hostname: ryanguild.xyz.ngrok.app
+          pathType: Prefix
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
