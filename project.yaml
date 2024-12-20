@@ -22,4 +22,36 @@ spec:
   namespaceResourceWhitelist:
     - group: "*"
       kind: "*"
-  # You can add sync windows, roles, and other constraints as needed
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-apps
+  namespace: argocd
+spec:
+  project: xyz
+  sources:
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: ngrok
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: sealed-secrets
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: keycloak
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: hello
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: xyz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: xyz
