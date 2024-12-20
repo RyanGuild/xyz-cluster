@@ -21,7 +21,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                namespace: argocd
                 name: argocd-server
                 port: 
                   number: 8080
@@ -30,3 +29,16 @@ apiVersion: ingress.k8s.ngrok.com/v1alpha1
 kind: NgrokModuleSet
 metadata:
   name: ngrok-module-set
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  type: ExternalName
+  externalName: argocd-server.argocd.svc.cluster.local
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
