@@ -10,10 +10,15 @@ spec:
     - host: ryanguild.xyz.ngrok.app
       http:
         paths:
-          - path: /hello
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: hello
                 port: 
                   number: 80
+---
+apiVersion: ingress.k8s.ngrok.com/v1alpha1
+kind: NgrokModuleSet
+metadata:
+  name: ngrok-module-set
