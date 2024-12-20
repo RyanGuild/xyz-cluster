@@ -13,7 +13,8 @@ spec:
       releaseName: ngrok
       values: |
         credentials:
-          secretName: ngrok-credentials
+          secret:
+            name: ngrok-credentials
   destination:
     server: https://kubernetes.default.svc
     namespace: xyz
