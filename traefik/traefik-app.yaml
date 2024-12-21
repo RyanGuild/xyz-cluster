@@ -12,6 +12,7 @@ spec:
     helm:
       releaseName: traefik
       valuesObject:
+        fullnameOverride: traefik-controller
         experimental:
           kubernetesGateway:
             enabled: true
