@@ -9,6 +9,12 @@ spec:
   - repoURL: https://charts.bitnami.com/bitnami
     targetRevision: "17.3.2"
     chart: keycloak
+    valuesObject:
+      auth:
+        existingSecret: keycloak-auth-secret
+      postgresql:
+        auth:
+          existingSecret: keycloak-postgresql-secret
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
