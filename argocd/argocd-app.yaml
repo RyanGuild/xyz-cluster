@@ -9,6 +9,9 @@ spec:
   - repoURL: https://argoproj.github.io/argo-helm
     targetRevision: 7.7.11
     chart: argo-cd
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: argocd/src
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
