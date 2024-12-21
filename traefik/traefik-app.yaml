@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ngrok
+  namespace: argocd
+spec:
+  project: xyz
+  sources:
+  - repoURL: https://traefik.github.io/charts
+    chart: traefik/traefik
+    targetRevision: v3.2.3
+    helm:
+      releaseName: traefik
+  # - repoURL: https://github.com/ryanguild/xyz-cluster
+  #   path: ngrok/src
+  #   targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: xyz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  revisionHistoryLimit: 2 
