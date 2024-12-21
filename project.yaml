@@ -43,6 +43,9 @@ spec:
   - repoURL: https://github.com/ryanguild/xyz-cluster.git
     targetRevision: main
     path: hello
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: traefik
   destination:
     server: https://kubernetes.default.svc
     namespace: xyz
