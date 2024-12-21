@@ -8,11 +8,11 @@ spec:
   sources:
   - repoURL: https://traefik.github.io/charts
     chart: traefik/traefik
-    targetRevision: v3.2.3
+    targetRevision: v33.2.1
     helm:
       releaseName: traefik
   # - repoURL: https://github.com/ryanguild/xyz-cluster
-  #   path: ngrok/src
+  #   path: traefik/src
   #   targetRevision: main
   destination:
     server: https://kubernetes.default.svc
