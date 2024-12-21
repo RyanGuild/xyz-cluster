@@ -11,6 +11,7 @@ spec:
     chart: keycloak
     valuesObject:
       auth:
+        username: postgres
         existingSecret: keycloak-auth-secret
       # postgresql:
       #   auth:
