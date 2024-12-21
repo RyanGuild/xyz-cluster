@@ -1,0 +1,24 @@
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "keycloak-postgresql-secret",
+    "namespace": "xyz",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "keycloak-postgresql-secret",
+        "namespace": "xyz",
+        "creationTimestamp": null
+      },
+      "type": "Opaque"
+    },
+    "encryptedData": {
+      "password": "AgAXS/0uh0sSk8arMGDnJappgndxb1QluyYHaIWb/Se54pmkevVr3LLszhOTW1620qTGywWiQzuJvy44kyRuui4oe1NxSZuxRm4ceVoCowyLsys7NkSWwZW/tJxOz3PEvBxCJVyTMSBFl0jlGI+Mj0scrnVgOUrjT8HMKmo4FrDdYEUftEcw778DOZOVnjp14z08AWbWm9fyQB+dWbbowOPkO4rEytl2JujHHvBmnf2zRP+Y7eeA+46lYbuN8hmaK2uD0xrzTekWKELxyzwR3LsRCcC2ILAnxgIh5mjteQ82D+ffTVYE/2zpGLgTuoHmKxqasfTP6TKfMPyNLCSKe5fiz0ItcbfJw7ck7LJimLuKwl30LPpQGGNwSsTvia97MIAVSggL/91GOkMfkmABbPDH6aiPlmIY3yf47tvBZocVKl2jPUFe2HLecIJIOp0pu+UvXqT54/BLJLb73YBVqEQXiH60Lr1RxLKFA4FVcziMuMqkCkQtd1ZXmifE5S8fbHUrTFjCeI3qFpHfw3BVHKhpz0ZFfjjSBUItgydCjgrlzzZ+0gFAxsI1iuwMlYioBd4/lm92pz1H00waZlbkr6NzzIxmPXzXrwKVNUG+nSOBFwcNWjh91FLp4NxE0PGO4ALI14T7LKUyFGhz7jLjon7TBArD1HV8l3gD9gfE5xbpGyf6aagvygNIY+nr8iBGqtjoq2FnM07I1RhYcoQ1d7aR5Q==",
+      "postgres-password": "AgCtg+3G70y+nAczrs8QP4bdW6dSxSXmUjDeKNyk7jSaONvgeq5h00Kp+j2CYsVuwII05PqhFz3J85xXbuKbJe+HumcW7+KWxSfoq4p6ojFhkmc1p3JfLTrFzzIUOMMxTn/FaBTcyE3Kab80lMVknfn9b80LvTYLYFE5toigqdxe602MEyihM5yQo2LG7Ksh5PGEgYG8IU+DizVpP4wWEaQu0Lp4agO57YJZpCi2jKaVgByTS0ah4WIN59QTzonJVaJ3AYB/eSVtHz+drLF/cDWR/zie0PrrmTe8yT8mI+kNH6dg0HIDpx2sCZv0etwbLyjYoB170INKWoetRA4C+c6pOl59UiUXv5/JhgeJGnOzmZSDEuoC+YX3DsvsG4BQLmfpOO2PcAO33gdxUAsvlv8TJ7aO1k2VgNFdTSf7ySPvkBqsok88XnFhrW4kdiyUpSwjJv0jx85YNt/JDNj1fWepPiVIODA3uy96uxBMD2tv1/rjt9R+dAt3i0gscMQ1oG2bKNwl5YrLTyp8eFYpdUt+uggpxuK15zVbMUssnfPCp/cPO6uGy0fAK+8XWTL9m7tnw6Fjj3q0B3Cumw/HuIbdhKZHWN5H95CL3sFGCnA0oxbF7DNsTFRLx2Ut7owECsN0qEPYDaRj/M6EPc+bbvowfZ+11iQ1u0Lceo/d6m37/cvnOpGqzhxCGA9Wgd/y1m3gffKablnKHAAH3r0hLXYEtQ==",
+      "replication-password": "AgAsJ1ssjeU8fHzF9y5hWnVeAQEBN3KmeYDR7wDFPF5gYp5x2tGACzOrYqYD5bQSL26ezSdZKjp5eYI61+PCWLKF06uY90Q4cvfgRzwp/5554lCkb4E0wLExFwERhVU8BZ3FjGuCSSp37s4RKRDfM+WJJFa6H60kmH2V/kOxw/VsDtJ3DWh/Xky7VpeZlkhh95NWJ/6FmGhjKKdg5+51imgGLiIGaTZiQBcctLuSsM5COoJrdDe1SbexbCWKIAFXlZjwwUvTqsj29M2K+ZkXQQM/+butVCJONEJxP2EuB5gz3DmJK0WoiM/BfhsttXgblMHLQy+sdiyKxrbN8/m6f5Vg7xzEONr/rwNY6grPqjvO1FwgCWfc3r61cLlyhQ6DqnUEb4OyDd+/O59SKAcV9RUCV0On7uDBNgd/Qu9GgRTmP9Vo49EcAlO+2Y+iOXNI+zpipKesjaomxS4wEDhhtWlsCkDOLtoicAfXbNsQkF4BOjIqrpTS1U45c0jwcYxQFgJk6pLe3ZHoJi/aFLaMCEq5GtEIeb2/tmcad17TJai3Vinl3AvbQqAGW1ebJfE6L7odKh4WHMjc6DDGzsSGJjMTc3+drvuCFTpcOAsN2d7O/ZwKmQryM4tKJWD9IF9EKBzpVqaWMFoG25loAgaogyr0HucemxjRpPHQKGCX8+xUSamanBLSywCqG24SMjMZd5+3a72F7GsEfXI7EKNnyWLofC5iBg=="
+    }
+  }
+}
