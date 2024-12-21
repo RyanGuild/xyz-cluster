@@ -12,9 +12,9 @@ spec:
     valuesObject:
       auth:
         existingSecret: keycloak-auth-secret
-      postgresql:
-        auth:
-          existingSecret: keycloak-postgresql-secret
+      # postgresql:
+      #   auth:
+      #     existingSecret: keycloak-postgresql-secret
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
