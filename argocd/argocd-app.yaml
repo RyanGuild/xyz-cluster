@@ -8,4 +8,5 @@ spec:
   sources:
   - repoURL: https://argoproj.github.io/argo-helm
     targetRevision: main
-    chart: argo/argo-cd
+    chart: argo-cd
+  
