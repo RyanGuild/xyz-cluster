@@ -11,6 +11,11 @@ spec:
     targetRevision: 33.2.1
     helm:
       releaseName: traefik
+      valuesObject:
+        experimental:
+          kubernetesGateway:
+            enabled: true
+
   # - repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
   #   targetRevision: main
