@@ -10,7 +10,7 @@ spec:
     targetRevision: "17.3.2"
     chart: keycloak
     valuesObject:
-      httpRelativePath: "/"
+      httpRelativePath: "/keycloak"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
