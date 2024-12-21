@@ -11,10 +11,10 @@ spec:
     chart: keycloak
     valuesObject:
       auth:
-        existingSecret: keycloak-auth-secret
+        existingSecret: keycloak
       postgresql:
         auth:
-          existingSecret: keycloak-postgresql-secret
+          existingSecret: keycloak
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
