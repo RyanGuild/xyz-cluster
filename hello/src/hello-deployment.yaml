@@ -47,7 +47,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /hello
+        value: /
     backendRefs:
     - name: hello
       port: 80
