@@ -39,8 +39,8 @@ metadata:
   namespace: xyz
 spec:
   parentRefs:
-  - name: main
-    namespace: traefik
+  - name: traefik-gateway
+    namespace: xyz
   hostnames:
   - "hello.ryanguild.localhost"
   rules:
