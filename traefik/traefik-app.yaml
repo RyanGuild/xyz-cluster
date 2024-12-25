@@ -17,6 +17,8 @@ spec:
             enabled: true
         gateway:
           enabled: true
+        gatewayClass:
+          enabled: true
 
   # - repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
