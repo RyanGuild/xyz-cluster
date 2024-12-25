@@ -5,8 +5,8 @@ metadata:
   namespace: xyz
 spec:
   parentRefs:
-  - name: main
-    namespace: traefik
+  - name: traefik-gateway
+    namespace: xyz
   hostnames:
   - "argocd.ryanguild.xyz"
   rules:
