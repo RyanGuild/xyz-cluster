@@ -6,7 +6,7 @@ metadata:
 spec:
   project: xyz
   sources:
-  - repoURL: https://charts.bitnami.com/bitnami
+  - repoURL: registry-1.docker.io/bitnamicharts
     targetRevision: 24.3.1
     chart: keycloak
     # valuesObject:
