@@ -25,6 +25,27 @@ spec:
           enabled: true
         gatewayClass:
           enabled: true
+        ports:
+          web:
+            port: 80
+            expose: true
+            exposedPort: 80
+            protocol: TCP
+        ingressClass:
+          enabled: false
+        deployment:
+          kind: Deployment
+        logs:
+          general:
+            level: DEBUG
+        installation:
+          enabled: true
+          createNamespace: true
+          namespace: xyz
+        crds:
+          install: true
+          allowNamespaceList:
+            - xyz
 
   # - repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
@@ -36,4 +57,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
   revisionHistoryLimit: 2 
