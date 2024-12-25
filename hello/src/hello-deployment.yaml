@@ -42,7 +42,7 @@ spec:
   - name: main
     namespace: traefik
   hostnames:
-  - "hello.ryanguild.local"
+  - "hello.ryanguild.localhost"
   rules:
   - matches:
     - path:
