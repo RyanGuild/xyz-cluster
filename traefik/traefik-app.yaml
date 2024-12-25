@@ -12,6 +12,10 @@ spec:
     helm:
       releaseName: traefik
       valuesObject:
+        providers:
+          kubernetesGateway:
+            enabled: true
+            experimentalChannel: true
         experimental:
           kubernetesGateway:
             enabled: true
