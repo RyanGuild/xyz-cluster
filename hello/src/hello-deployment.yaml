@@ -51,4 +51,4 @@ spec:
     backendRefs:
     - name: hello
       port: 80
-      weight: 1 
+      
