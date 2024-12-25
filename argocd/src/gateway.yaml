@@ -8,7 +8,7 @@ spec:
   - name: traefik-gateway
     namespace: xyz
   hostnames:
-  - "argocd.ryanguild.xyz"
+  - "argocd.ryanguild.localhost"
   rules:
   - matches:
     - path:
