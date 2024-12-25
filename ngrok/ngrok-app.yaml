@@ -15,9 +15,9 @@ spec:
         credentials:
           secret:
             name: ngrok-credentials
-  - repoURL: https://github.com/ryanguild/xyz-cluster
-    path: ngrok/src
-    targetRevision: main
+  # - repoURL: https://github.com/ryanguild/xyz-cluster
+  #   path: ngrok/src
+  #   targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: xyz
