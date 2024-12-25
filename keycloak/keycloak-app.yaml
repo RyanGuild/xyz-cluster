@@ -9,12 +9,9 @@ spec:
   - repoURL: registry-1.docker.io/bitnamicharts
     targetRevision: 24.3.1
     chart: keycloak
-    # valuesObject:
-    #   auth:
-    #     existingSecret: keycloak-auth-secret
-    #  postgresql:
-    #    auth:
-    #      existingSecret: keycloak-postgresql-secret
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: keycloak/src
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: xyz
