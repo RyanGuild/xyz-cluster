@@ -17,6 +17,9 @@ spec:
             enabled: true
         gateway:
           enabled: true
+          listeners:
+            web:
+              hostname: "ryanguild.local"
         gatewayClass:
           enabled: true
 
