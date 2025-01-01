@@ -14,7 +14,7 @@ spec:
       path: config/crd/experimental
     - repoURL: https://traefik.github.io/charts
     chart: traefik
-    targetRevision: 33.2.2
+    targetRevision: 33.2.1
     helm:
       releaseName: traefik
       valuesObject:
@@ -42,6 +42,8 @@ spec:
           enabled: true
           createNamespace: true
           namespace: xyz
+        image:
+          tag: 33.2.2
         crds:
           install: true
           allowNamespaceList:
