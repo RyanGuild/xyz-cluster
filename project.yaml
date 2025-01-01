@@ -49,6 +49,9 @@ spec:
   - repoURL: https://github.com/ryanguild/xyz-cluster.git
     targetRevision: main
     path: argocd
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: gateway-api
   destination:
     server: https://kubernetes.default.svc
     namespace: xyz
