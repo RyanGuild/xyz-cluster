@@ -6,9 +6,15 @@ metadata:
 spec:
   project: xyz
   sources:
-  - repoURL: https://traefik.github.io/charts
+  - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
+      targetRevision: v1.2.0
+      path: config/crd/standard
+    - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
+      targetRevision: v1.2.0
+      path: config/crd/experimental
+    - repoURL: https://traefik.github.io/charts
     chart: traefik
-    targetRevision: 33.2.1
+    targetRevision: 33.2.2
     helm:
       releaseName: traefik
       valuesObject:
