@@ -4,7 +4,7 @@ metadata:
   name: gateway-api
   namespace: xyz
 spec:
-  project: default
+  project: xyz
   sources:
     - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
       targetRevision: v1.2.0
