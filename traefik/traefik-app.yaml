@@ -13,44 +13,44 @@ spec:
     targetRevision: v1.2.0
     path: config/crd/experimental
   - repoURL: https://traefik.github.io/charts
-  chart: traefik
-  targetRevision: 33.2.1
-  helm:
-    releaseName: traefik
-    valuesObject:
-      providers:
-        kubernetesGateway:
+    chart: traefik
+    targetRevision: 33.2.1
+    helm:
+      releaseName: traefik
+      valuesObject:
+        providers:
+          kubernetesGateway:
+            enabled: true
+            experimentalChannel: true
+          kubernetesIngress:
+            enabled: false
+        experimental:
+          kubernetesGateway:
+            enabled: true
+        gateway:
           enabled: true
-          experimentalChannel: true
-        kubernetesIngress:
+        gatewayClass:
+          enabled: true
+        ingressClass:
           enabled: false
-      experimental:
-        kubernetesGateway:
+        deployment:
+          kind: Deployment
+        logs:
+          general:
+            level: DEBUG
+        installation:
           enabled: true
-      gateway:
-        enabled: true
-      gatewayClass:
-        enabled: true
-      ingressClass:
-        enabled: false
-      deployment:
-        kind: Deployment
-      logs:
-        general:
-          level: DEBUG
-      installation:
-        enabled: true
-        createNamespace: true
-        namespace: xyz
-      image:
-        tag: 33.2.2
-      crds:
-        install: true
-        allowNamespaceList:
-          - xyz
-          - traefik
-          - argocd
-          - keycloak
+          createNamespace: true
+          namespace: xyz
+        image:
+          tag: 33.2.2
+        crds:
+          install: true
+          allowNamespaceList:
+            - xyz
+            - traefik
+            - argocd
+            - keycloak
   #- repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
   #   targetRevision: main
