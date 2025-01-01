@@ -40,6 +40,9 @@ spec:
           install: true
           allowNamespaceList:
             - xyz
+            - traefik
+            - argocd
+            - keycloak
 
   # - repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
