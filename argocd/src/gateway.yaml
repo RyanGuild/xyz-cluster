@@ -9,6 +9,7 @@ spec:
     namespace: xyz
   hostnames:
   - "argocd.ryanguild.localhost"
+  - "argocd.ryanguild.xyz"
   rules:
   - matches:
     - path:
@@ -28,6 +29,7 @@ spec:
   - name: main
     namespace: traefik
   hostnames:
+  - "argocd.ryanguild.localhost"
   - "argocd.ryanguild.xyz"
   rules:
   - backendRefs:
