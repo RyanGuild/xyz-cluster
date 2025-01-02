@@ -10,7 +10,7 @@ spec:
     - "*"
   # Cluster and namespace destinations this project can deploy to
   destinations:
-    - namespace: xyz
+    - namespace: default
       server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc
@@ -49,18 +49,13 @@ spec:
   - repoURL: https://github.com/ryanguild/xyz-cluster.git
     targetRevision: main
     path: argocd
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    targetRevision: main
-    path: gateway-api
+  # - repoURL: https://github.com/ryanguild/xyz-cluster.git
+  #   targetRevision: main
+  #   path: gateway-api
   destination:
     server: https://kubernetes.default.svc
-    namespace: xyz
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: xyz

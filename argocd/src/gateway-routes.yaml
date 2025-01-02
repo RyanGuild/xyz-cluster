@@ -31,7 +31,6 @@ spec:
     namespace: traefik
   hostnames:
   - "argocd.ryanguild.localhost"
-  - "argocd.ryanguild.local"
   - "argocd.ryanguild.xyz"
   rules:
   - backendRefs:

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: xyz
   sources:
-  - repoURL: https://github.com/ryanguild/xyz-cluster
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
     path: hello/src
     targetRevision: main
   destination:
@@ -16,4 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  revisionHistoryLimit: 2 
