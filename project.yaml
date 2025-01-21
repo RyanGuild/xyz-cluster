@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: xyz
-  namespace: argocd
+  namespace: default
 spec:
   description: "Project for managing Sealed Secrets installation"
   # Source Repositories allowed for this project
@@ -11,8 +11,6 @@ spec:
   # Cluster and namespace destinations this project can deploy to
   destinations:
     - namespace: default
-      server: https://kubernetes.default.svc
-    - namespace: argocd
       server: https://kubernetes.default.svc
   # Optionally, specify which kinds of cluster/namespaced resources are allowed
   # If you trust the chart fully, you can keep them broad:
@@ -27,28 +25,28 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: xyz-apps
-  namespace: argocd
+  namespace: default
 spec:
   project: xyz
   sources:
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    targetRevision: main
-    path: ngrok
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    targetRevision: main
-    path: sealed-secrets
-  # - repoURL: https://github.com/ryanguild/xyz-cluster.git
-  #   targetRevision: main
-  #   path: keycloak
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    targetRevision: main
-    path: hello
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    targetRevision: main
-    path: traefik
-  - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    targetRevision: main
-    path: argocd
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: ngrok
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: sealed-secrets
+    # - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    #   targetRevision: main
+    #   path: keycloak
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: hello
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: traefik
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: argocd
   # - repoURL: https://github.com/ryanguild/xyz-cluster.git
   #   targetRevision: main
   #   path: gateway-api

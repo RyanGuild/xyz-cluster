@@ -2,63 +2,60 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: traefik
-  namespace: argocd
+  namespace: default
 spec:
   project: xyz
   sources:
-  # - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
-  #   targetRevision: v1.2.0
-  #   path: config/crd/standard
-  - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
-    targetRevision: v1.2.0
-    path: config/crd/experimental
-  - repoURL: https://traefik.github.io/charts
-    chart: traefik
-    targetRevision: 33.2.1
-    helm:
-      releaseName: traefik
-      valuesObject:
-        providers:
-          kubernetesGateway:
+    # - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
+    #   targetRevision: v1.2.0
+    #   path: config/crd/standard
+    - repoURL: https://github.com/kubernetes-sigs/gateway-api.git
+      targetRevision: v1.2.0
+      path: config/crd/experimental
+    - repoURL: https://traefik.github.io/charts
+      chart: traefik
+      targetRevision: 33.2.1
+      helm:
+        releaseName: traefik
+        valuesObject:
+          providers:
+            kubernetesGateway:
+              enabled: true
+              experimentalChannel: true
+            kubernetesIngress:
+              enabled: false
+          experimental:
+            kubernetesGateway:
+              enabled: true
+          gateway:
             enabled: true
-            experimentalChannel: true
-          kubernetesIngress:
+          gatewayClass:
+            enabled: true
+          ingressClass:
             enabled: false
-        experimental:
-          kubernetesGateway:
+          deployment:
+            kind: Deployment
+          logs:
+            general:
+              level: DEBUG
+          installation:
             enabled: true
-        gateway:
-          enabled: true
-        gatewayClass:
-          enabled: true
-        ingressClass:
-          enabled: false
-        deployment:
-          kind: Deployment
-        logs:
-          general:
-            level: DEBUG
-        installation:
-          enabled: true
-          createNamespace: true
-          namespace: xyz
-        crds:
-          install: true
-          allowNamespaceList:
-            - xyz
-            - traefik
-            - argocd
-            - keycloak
+            createNamespace: true
+            namespace: xyz
+          crds:
+            install: true
+            allowNamespaceList:
+              - default
   #- repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
   #   targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: xyz
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
-  revisionHistoryLimit: 2 
+      - CreateNamespace=true
+  revisionHistoryLimit: 2
