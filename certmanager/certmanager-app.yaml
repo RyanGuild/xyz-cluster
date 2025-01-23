@@ -13,7 +13,7 @@ spec:
         releaseName: cert-manager
         valuesObject:
           crds:
-            create: true
+            enabled: true
 
   destination:
     server: https://kubernetes.default.svc
