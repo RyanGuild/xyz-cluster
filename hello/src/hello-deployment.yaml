@@ -14,10 +14,14 @@ spec:
         app: hello
     spec:
       containers:
-      - name: hello
-        image: nginxdemos/hello
-        ports:
-        - containerPort: 80
+        - name: hello
+          image: nginxdemos/hello
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -26,9 +30,9 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
+    - port: 80
+      targetPort: 80
+      protocol: TCP
   selector:
     app: hello
 ---
@@ -39,16 +43,15 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-  - name: traefik-gateway
-    namespace: default
+    - name: traefik-gateway
+      namespace: default
   hostnames:
-  - "hello.ryanguild.localhost"
+    - "hello.ryanguild.localhost"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: hello
-      port: 80
-      
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: hello
+          port: 80
