@@ -14,14 +14,14 @@ spec:
       path: config/crd/experimental
     - repoURL: https://traefik.github.io/charts
       chart: traefik
-      targetRevision: 33.2.1
+      targetRevision: 34.1.0
       helm:
         releaseName: traefik
         valuesObject:
           providers:
             kubernetesGateway:
               enabled: true
-            kubernetesIngress: 
+            kubernetesIngress:
               enabled: false
           gateway:
             enabled: true
