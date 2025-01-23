@@ -25,4 +25,4 @@ spec:
             namespace: default
   addresses:
     - type: Hostname
-      value: ryanguild.localhost
+      value: localhost
