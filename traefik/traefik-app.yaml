@@ -18,40 +18,14 @@ spec:
       helm:
         releaseName: traefik
         valuesObject:
-          ingressRoute:
-            dashboard:
-              enabled: true
-              entryPoints:
-                - web
-                - traefik
           providers:
             kubernetesGateway:
               enabled: true
-              experimentalChannel: true
-            kubernetesIngress:
+            kubernetesIngress: 
               enabled: false
-          experimental:
-            kubernetesGateway:
-              enabled: true
           gateway:
             enabled: true
-          gatewayClass:
-            enabled: true
-          ingressClass:
-            enabled: false
-          deployment:
-            kind: Deployment
-          logs:
-            general:
-              level: DEBUG
-          installation:
-            enabled: true
-            createNamespace: true
-            namespace: default
-          crds:
-            install: true
-            allowNamespaceList:
-              - default
+            namespacePolicy: All
   #- repoURL: https://github.com/ryanguild/xyz-cluster
   #   path: traefik/src
   #   targetRevision: main
