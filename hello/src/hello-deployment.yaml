@@ -49,11 +49,8 @@ spec:
   hostnames:
     - hello.ryanguild.localhost
   rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
+    - backendRefs:
         - name: hello
           port: 80
           kind: Service
+          namespace: default
