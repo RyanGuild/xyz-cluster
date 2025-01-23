@@ -5,8 +5,8 @@ kind: Kustomization
 helmCharts:
   - name: argo/argo-cd                      # The name of the chart
     releaseName: argocd             # Helm release name
-    version: 7.7.11                           # Chart version
-    repo: https://argoproj.github.io/argo-helm         # Helm chart repository
+    version: 7.7.16                         # Chart version
+    repo: https://argoproj.github.io/argo-helm/         # Helm chart repository
     valuesFile: values.yaml                  # Override values
     includeCRDs: true                       # If the chart has CRDs, set to true
     # optionally specify 'forceUpgrade: true' if needed
@@ -22,3 +22,6 @@ patches:
       # You can narrow down which ConfigMap to patch by name
       # name: my-helm-release-config  (example if you know the final name)
       # or by label selectors, etc.
+
+resources:
+  - patches/gateway-routes.yaml
