@@ -23,6 +23,3 @@ spec:
         certificateRefs:
           - name: traefik-localhost-tls
             namespace: default
-  addresses:
-    - type: Hostname
-      value: localhost
