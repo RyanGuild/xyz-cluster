@@ -1,0 +1,24 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: traefik-xyz-tls
+  namespace: default
+spec:
+  secretName: traefik-xyz-tls
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer
+  commonName: ryanguild.xyz
+  dnsNames:
+    - ryanguild.xyz
+    - "*.ryanguild.xyz"
+    - argocd.ryanguild.xyz
+    - www.argocd.ryanguild.xyz
+    - hello.ryanguild.xyz
+    - www.hello.ryanguild.xyz
+    - keycloak.ryanguild.xyz
+    - www.keycloak.ryanguild.xyz
+    - traefik.ryanguild.xyz
+    - www.traefik.ryanguild.xyz
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days
