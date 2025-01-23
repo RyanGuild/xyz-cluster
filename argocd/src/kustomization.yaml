@@ -24,4 +24,4 @@ patches:
       # or by label selectors, etc.
 
 resources:
-  - patches/gateway-routes.yaml
+  - resources/gateway-routes.yaml
