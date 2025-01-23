@@ -55,3 +55,8 @@ spec:
       backendRefs:
         - name: hello
           port: 80
+          kind: Service
+        - name: hello
+          port: 443
+          kind: Service
+          namespace: default
