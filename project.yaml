@@ -48,7 +48,7 @@ spec:
       path: traefik
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
-    #   path: argocd
+      path: argocd
     # - repoURL: https://github.com/ryanguild/xyz-cluster.git
     #   targetRevision: main
     #   path: certmanager
