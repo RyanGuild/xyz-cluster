@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: argocd-server-tls
   issuerRef:
-    name: letsencrypt-issuer
+    name: selfsigned-issuer
     kind: ClusterIssuer
   commonName: argocd.ryanguild.localhost
   dnsNames:
