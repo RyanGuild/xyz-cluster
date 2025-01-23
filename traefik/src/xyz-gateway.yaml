@@ -14,9 +14,9 @@ spec:
       protocol: HTTPS
       tls:
         mode: Terminate
-        certificateRef:
-          name: traefik-xyz-tls
-          namespace: default
+        certificateRefs:
+          - name: traefik-xyz-tls
+            namespace: default
     - name: grpc
       port: 50051
       protocol: GRPC
