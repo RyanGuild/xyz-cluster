@@ -41,15 +41,15 @@ spec:
                   - name: traefik-xyz-tls
                     namespace: default
               localhost:
-                port: 80
+                port: 8000
                 protocol: HTTP
                 namespacePolicy: All
-                hostname: localhost
+                hostname: ryanguild.localhost
               localhostsecure:
-                port: 443
+                port: 8443
                 protocol: HTTPS
                 namespacePolicy: All
-                hostname: localhost
+                hostname: ryanguild.localhost
                 certificateRes:
                   - name: traefik-localhost-tls
                     namespace: default
