@@ -1,3 +1,0 @@
-- op: replace
-  path: /data/url
-  value: "https://argocd.ryanguild.localhost"
