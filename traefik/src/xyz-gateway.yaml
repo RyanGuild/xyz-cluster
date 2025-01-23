@@ -13,6 +13,7 @@ spec:
       port: 443
       protocol: HTTPS
       tls:
+        mode: Terminate
         certificateRef:
           name: traefik-xyz-tls
           namespace: default
