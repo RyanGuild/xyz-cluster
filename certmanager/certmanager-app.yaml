@@ -12,10 +12,17 @@ spec:
       helm:
         releaseName: cert-manager
         valuesObject:
-          namespace: default
           crds:
             enabled: true
+    - repoURL: https://github.com/ryanguild/xyz-cluster
+      targetRevision: main
+      path: certmanager/src
 
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false

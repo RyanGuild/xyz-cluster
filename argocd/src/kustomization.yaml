@@ -19,3 +19,4 @@ resources:
 
 patches:
   - path: patches/argocd-cm.yaml
+  - path: patches/argocd-server-svc.yaml

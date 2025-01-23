@@ -1,0 +1,8 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-issuer
+spec:
+  acme:
+    email: rdg27@pitt.edu
+    server: https://acme-v02.api.letsencrypt.org/directory

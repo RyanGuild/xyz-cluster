@@ -12,6 +12,8 @@ spec:
   destinations:
     - namespace: default
       server: https://kubernetes.default.svc
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
   # Optionally, specify which kinds of cluster/namespaced resources are allowed
   # If you trust the chart fully, you can keep them broad:
   clusterResourceWhitelist:
