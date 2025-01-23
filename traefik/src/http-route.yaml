@@ -14,3 +14,9 @@ spec:
         - name: traefik-dashboard
           port: 80
           kind: Service
+          group: ""
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
