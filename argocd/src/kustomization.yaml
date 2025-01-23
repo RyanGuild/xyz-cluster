@@ -11,6 +11,8 @@ helmCharts:
     valuesInline:
       global:
         domain: argocd.ryanguild.localhost
+      params:
+        server.insecure: true
 
 resources:
   - resources/gateway-routes.yaml
