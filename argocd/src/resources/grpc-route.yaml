@@ -4,7 +4,6 @@ metadata:
   name: argocd-server-grpc-route
   namespace: argocd
 spec:
-  gatewayClassName: traefik-gateway
   parentRefs:
     - name: traefik-gateway
       namespace: default
@@ -23,6 +22,7 @@ spec:
     - matches:
         - headers:
             - name: Content-Type
+              type: Exact
               value: application/grpc
       backendRefs:
         - name: argocd-server

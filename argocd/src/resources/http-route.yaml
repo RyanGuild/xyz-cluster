@@ -4,7 +4,6 @@ metadata:
   name: argocd-server-http-route
   namespace: argocd
 spec:
-  gatewayClassName: traefik-gateway
   parentRefs:
     - name: traefik-gateway
       namespace: default
