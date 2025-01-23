@@ -48,6 +48,10 @@ spec:
               middlewares: []
               # -- TLS options (e.g. secret containing certificate)
               tls: {}
+          metrics:
+            addInternals: true
+          tracing:
+            addInternals: true
 
     # - repoURL: https://github.com/ryanguild/xyz-cluster
     #   path: traefik/src
