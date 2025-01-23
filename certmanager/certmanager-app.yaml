@@ -14,6 +14,9 @@ spec:
         valuesObject:
           crds:
             enabled: true
+        parameters:
+          - crds:
+              enabled: true
     - repoURL: https://github.com/ryanguild/xyz-cluster
       targetRevision: main
       path: certmanager/src
