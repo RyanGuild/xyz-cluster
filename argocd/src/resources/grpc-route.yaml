@@ -10,12 +10,7 @@ spec:
   hostnames:
     - "argocd.ryanguild.localhost"
   rules:
-    - priority: 11
-      matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
+    - backendRefs:
         - name: argocd-server
           port: 80
           kind: Service
