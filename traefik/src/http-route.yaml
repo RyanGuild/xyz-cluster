@@ -9,7 +9,7 @@ spec:
       namespace: default
   rules:
     - hostnames:
-        - traefik.ryanguild.localhost
+        - "traefik.ryanguild.localhost"
       backendRefs:
         - name: traefik-dashboard
           port: 80
