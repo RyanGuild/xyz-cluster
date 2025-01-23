@@ -26,9 +26,9 @@ spec:
           gateway:
             enabled: true
             namespacePolicy: All
-  #- repoURL: https://github.com/ryanguild/xyz-cluster
-  #   path: traefik/src
-  #   targetRevision: main
+    - repoURL: https://github.com/ryanguild/xyz-cluster
+      path: traefik/src
+      targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: default
