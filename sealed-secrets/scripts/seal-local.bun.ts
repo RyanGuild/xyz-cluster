@@ -50,5 +50,3 @@ for (const secretFile of manifestFiles) {
     await $`cat ${secretPath} | kubeseal --controller-namespace=default --namespace=default > ${sealedSecretPath} `
     console.log(`Sealing secret ${secretName}...`);
 }
-
-await $`kubectl apply -f ${outputFolder}`;
