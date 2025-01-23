@@ -11,12 +11,9 @@ spec:
       targetRevision: 1.16.3
       helm:
         releaseName: cert-manager
-        valuesObject:
-          crds:
-            enabled: true
-        params:
-          crds:
-            enabled: true
+        parameters:
+          - name: "crds.enable"
+            value: "true"
     - repoURL: https://github.com/ryanguild/xyz-cluster
       targetRevision: main
       path: certmanager/src
