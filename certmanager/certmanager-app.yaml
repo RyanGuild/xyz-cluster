@@ -12,6 +12,7 @@ spec:
       helm:
         releaseName: cert-manager
         valuesObject:
+          namespace: default
           crds:
             enabled: true
 
