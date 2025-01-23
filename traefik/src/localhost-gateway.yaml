@@ -16,13 +16,6 @@ spec:
         certificateRef:
           name: traefik-localhost-tls
           namespace: default
-    - name: grpc
-      port: 50051
-      protocol: GRPC
-      tls:
-        certificateRef:
-          name: traefik-localhost-tls
-          namespace: default
   hostname: ryanguild.localhost
   addresses:
     - type: Hostname
