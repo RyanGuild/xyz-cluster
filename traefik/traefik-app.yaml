@@ -40,19 +40,19 @@ spec:
                 certificateRefs:
                   - name: traefik-xyz-tls
                     namespace: default
-            # localhost:
-            #   port: 80
-            #   protocol: HTTP
-            #   namespacePolicy: All
-            #   hostname: localhost
-            # localhostsecure:
-            #   port: 443
-            #   protocol: HTTPS
-            #   namespacePolicy: All
-            #   hostname: localhost
-            #   certificateRef:
-            #     name: traefik-localhost-tls
-            #     namespace: default
+              localhost:
+                port: 80
+                protocol: HTTP
+                namespacePolicy: All
+                hostname: localhost
+              localhostsecure:
+                port: 443
+                protocol: HTTPS
+                namespacePolicy: All
+                hostname: localhost
+                certificateRes:
+                  - name: traefik-localhost-tls
+                    namespace: default
 
     - repoURL: https://github.com/ryanguild/xyz-cluster
       path: traefik/src
