@@ -37,9 +37,9 @@ spec:
                 protocol: HTTPS
                 namespacePolicy: All
                 hostname: ryanguild.xyz
-                certificateRef:
-                  name: traefik-xyz-tls
-                  namespace: default
+                certificateRefs:
+                  - name: traefik-xyz-tls
+                    namespace: default
             # localhost:
             #   port: 80
             #   protocol: HTTP
