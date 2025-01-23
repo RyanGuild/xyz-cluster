@@ -18,6 +18,9 @@ spec:
       helm:
         releaseName: traefik
         valuesObject:
+          ingressRoute:
+            dashboard:
+              enabled: true
           providers:
             kubernetesGateway:
               enabled: true
