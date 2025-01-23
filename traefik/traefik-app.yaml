@@ -32,14 +32,14 @@ spec:
                 protocol: HTTP
                 namespacePolicy: All
                 hostname: ryanguild.xyz
-            #   websecure:
-            #     port: 8443
-            #     protocol: HTTPS
-            #     namespacePolicy: All
-            #     hostname: ryanguild.xyz
-            #     certificateRef:
-            #       name: traefik-xyz-tls
-            #       namespace: default
+              websecure:
+                port: 8443
+                protocol: HTTPS
+                namespacePolicy: All
+                hostname: ryanguild.xyz
+                certificateRef:
+                  name: traefik-xyz-tls
+                  namespace: default
             # localhost:
             #   port: 80
             #   protocol: HTTP
