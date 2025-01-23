@@ -7,7 +7,7 @@ spec:
   project: xyz
   sources:
     - repoURL: https://argoproj.github.io/argo-helm
-      targetRevision: 7.7.11
+      targetRevision: 7.7.16
       chart: argo-cd
       kustomize:
         patches:
@@ -17,7 +17,6 @@ spec:
               namespace: default
               version: v1
             patch: argocd/patches/argocd-cm.yaml
-
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: argocd/src
