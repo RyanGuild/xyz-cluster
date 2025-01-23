@@ -15,7 +15,7 @@ helmCharts:
         server.insecure: true
 
 resources:
-  - resources/gateway-routes.yaml
+  - resources/**.yaml
 
 patches:
   - path: patches/argocd-cm.yaml
