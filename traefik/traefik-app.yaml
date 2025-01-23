@@ -26,12 +26,12 @@ spec:
               enabled: false
           gateway:
             enabled: true
-            # listeners:
-            #   web:
-            #     port: 8000
-            #     protocol: HTTP
-            #     namespacePolicy: All
-            #     hostname: ryanguild.xyz
+            listeners:
+              web:
+                port: 8000
+                protocol: HTTP
+                namespacePolicy: All
+                hostname: ryanguild.xyz
             #   websecure:
             #     port: 8443
             #     protocol: HTTPS
