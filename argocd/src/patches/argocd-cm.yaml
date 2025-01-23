@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # If you know the final name of the ConfigMap after the Helm release is applied
+  # it often follows the pattern <releaseName>-<chartName>. For example:
+  # name: my-helm-release-my-helm-chart
+  name: argocd-cm
+  namespace: default
+data:
+  url: https://argocd.ryanguild.localhost
+  kustomize.buildOptions: --enable-helm
