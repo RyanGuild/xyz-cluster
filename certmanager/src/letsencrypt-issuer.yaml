@@ -2,7 +2,6 @@ apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: letsencrypt-issuer
-  namespace: default
 spec:
   acme:
     email: rdg27@pitt.edu
