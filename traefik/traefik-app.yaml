@@ -41,7 +41,7 @@ spec:
           installation:
             enabled: true
             createNamespace: true
-            namespace: xyz
+            namespace: default
           crds:
             install: true
             allowNamespaceList:
