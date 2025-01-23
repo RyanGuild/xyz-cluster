@@ -19,10 +19,6 @@ spec:
     - name: grpc
       port: 50051
       protocol: GRPC
-      tls:
-        certificateRef:
-          name: traefik-xyz-tls
-          namespace: default
   hostname: ryanguild.xyz
   addresses:
     - type: Hostname
