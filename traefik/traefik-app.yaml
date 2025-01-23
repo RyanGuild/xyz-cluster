@@ -24,7 +24,7 @@ spec:
               experimentalChannel: true
             kubernetesIngress:
               enabled: false
-          gateway:
+          # gateway:
           #   enabled: false
           #   listeners:
           #     web:
