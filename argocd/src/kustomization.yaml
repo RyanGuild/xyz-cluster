@@ -5,12 +5,12 @@ namespace: default
 
 # 3) Patches to modify specific objects after the Helm chart is rendered
 patches:
-  - path: argocd/src/patches/argo-cm.yaml
+  - path: ./patches/argo-cm.yaml
     target:
       kind: ConfigMap
       # You can narrow down which ConfigMap to patch by name
       # name: my-helm-release-config  (example if you know the final name)
       # or by label selectors, etc.
 
-resources:
-  - argocd/arc/resouces/gateway-routes.yaml
+# resources:
+#   - ./resouces/gateway-routes.yaml
