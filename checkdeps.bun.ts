@@ -8,7 +8,10 @@ if (!kubectlInfo || !kubectlInfo.clientVersion || !kubectlInfo.clientVersion.git
 }
 
 if (kubectlInfo.clientVersion.gitVersion !== kubectlInfo.serverVersion.gitVersion) {
-  throw new Error("kubectl versions do not match");
+  throw new Error(
+`kubectl versions do not match!!
+Client: ${kubectlInfo.clientVersion.gitVersion}
+Server: ${kubectlInfo.serverVersion.gitVersion}`);
 }
 
 console.log(kubectlInfo);

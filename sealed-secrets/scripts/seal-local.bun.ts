@@ -33,7 +33,7 @@ for (const secretName of rawFiles) {
         `${secretName}-sealed.yaml`,
     );
     console.log({ secretName, secretPath, sealedSecretPath });
-    await $`kubectl create secret generic ${secretName} --dry-run=client --from-file=${secretPath} -o yaml | kubeseal --controller-namespace=xyz --namespace=xyz  > ${sealedSecretPath}`;
+    await $`kubectl create secret generic ${secretName} --dry-run=client --from-file=${secretPath} -o yaml | kubeseal --controller-namespace=default --namespace=default  > ${sealedSecretPath}`;
 
     console.log(`Sealing secret ${secretName}...`);
 }
@@ -42,13 +42,11 @@ for (const secretFile of manifestFiles) {
     if (!secretFile) continue;
     const secretName = secretFile.split(".yaml")[0]
     const secretPath = path.join(targetFolder, secretFile);
-    const manifest = await Bun.file(secretPath)
     const sealedSecretPath = path.join(
         outputFolder,
         `${secretName}-sealed.yaml`,
     );
     console.log({ secretName, secretPath, sealedSecretPath })
-    const secretExists = $`kubectl get`
-    await $`cat ${secretPath} | kubeseal --controller-namespace=xyz --namespace=xyz > ${sealedSecretPath} `
+    await $`cat ${secretPath} | kubeseal --controller-namespace=default --namespace=default > ${sealedSecretPath} `
     console.log(`Sealing secret ${secretName}...`);
 }
