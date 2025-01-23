@@ -7,7 +7,6 @@ spec:
   secretName: argocd-server-tls
   issuerRef:
     name: letsencrypt-issuer
-    namespace: default
     kind: ClusterIssuer
   commonName: argocd.ryanguild.localhost
   dnsNames:
