@@ -44,7 +44,7 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-    - name: traefik-gateway
+    - name: traefik-localhost-gateway
       namespace: default
   hostnames:
     - "hello.ryanguild.localhost"
