@@ -33,6 +33,7 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
+
   selector:
     app: hello
 ---
@@ -56,7 +57,3 @@ spec:
         - name: hello
           port: 80
           kind: Service
-        - name: hello
-          port: 443
-          kind: Service
-          namespace: default
