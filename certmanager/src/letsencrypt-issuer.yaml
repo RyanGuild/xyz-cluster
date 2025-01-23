@@ -6,3 +6,5 @@ spec:
   acme:
     email: rdg27@pitt.edu
     server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-issuer-account-key
