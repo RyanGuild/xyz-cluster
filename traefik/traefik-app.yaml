@@ -50,7 +50,7 @@ spec:
                 protocol: HTTPS
                 namespacePolicy: All
                 hostname: ryanguild.localhost
-                certificateRes:
+                certificateRefs:
                   - name: traefik-localhost-tls
                     namespace: default
 
