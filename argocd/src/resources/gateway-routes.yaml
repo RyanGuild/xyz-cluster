@@ -5,14 +5,13 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-  - name: traefik-gateway
-    namespace: default
+    - name: traefik-gateway
+      namespace: default
   hostnames:
-  - "argocd.ryanguild.localhost"
+    - "argocd.ryanguild.localhost"
   rules:
-  - backendRefs:
-    - name: argocd-server
-      port: 80
+    - backendRefs:
+        - name: argocd-server
 ---
 apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TLSRoute
@@ -21,11 +20,10 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-  - name: traefik-gateway
-    namespace: default
+    - name: traefik-gateway
+      namespace: default
   hostnames:
-  - "argocd.ryanguild.localhost"
+    - "argocd.ryanguild.localhost"
   rules:
-  - backendRefs:
-    - name: argocd-server
-      port: 80
+    - backendRefs:
+        - name: argocd-server
