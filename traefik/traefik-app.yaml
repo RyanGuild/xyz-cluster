@@ -24,8 +24,8 @@ spec:
               experimentalChannel: true
             kubernetesIngress:
               enabled: false
-          # gateway:
-          #   enabled: true
+          gateway:
+          #   enabled: false
           #   listeners:
           #     web:
           #       port: 8000
@@ -40,19 +40,19 @@ spec:
           #       certificateRefs:
           #         - name: traefik-xyz-tls
           #           namespace: default
-          #     localhost:
-          #       port: 8000
-          #       protocol: HTTP
-          #       namespacePolicy: All
-          #       hostname: ryanguild.localhost
-          #     localhostsecure:
-          #       port: 8443
-          #       protocol: HTTPS
-          #       namespacePolicy: All
-          #       hostname: ryanguild.localhost
-          #       certificateRefs:
-          #         - name: traefik-localhost-tls
-          #           namespace: default
+          # localhost:
+          #   port: 8000
+          #   protocol: HTTP
+          #   namespacePolicy: All
+          #   hostname: ryanguild.localhost
+          # localhostsecure:
+          #   port: 8443
+          #   protocol: HTTPS
+          #   namespacePolicy: All
+          #   hostname: ryanguild.localhost
+          #   certificateRefs:
+          #     - name: traefik-localhost-tls
+          #       namespace: default
 
     - repoURL: https://github.com/ryanguild/xyz-cluster
       path: traefik/src
