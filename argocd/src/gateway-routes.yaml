@@ -1,32 +1,24 @@
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
 metadata:
-  name: argocd-gateway-http
-  namespace: default
+  name: argocd-server
+  namespace: argocd
 spec:
-  parentRefs:
-  - name: traefik-gateway
-    namespace: default
-  hostnames:
-  - "argocd.ryanguild.localhost"
-  rules:
-  - backendRefs:
-    - name: argocd-server
-      port: 443
----
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: TLSRoute
-metadata:
-  name: argocd-gateway-tls
-  namespace: default
-spec:
-  parentRefs:
-  - name: traefik-gateway
-    namespace: default
-  hostnames:
-  - "argocd.ryanguild.localhost"
-  rules:
-  - backendRefs:
-    - name: argocd-server
-      port: 443
-      weight: 1 
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`argocd.ryanguild.localhost`)
+      priority: 10
+      services:
+        - name: argocd-server
+          port: 80
+    - kind: Rule
+      match: Host(`argocd.ryanguild.localhost`) && Header(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argocd-server
+          port: 80
+          scheme: h2c
+  tls:
+    certResolver: default
