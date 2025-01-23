@@ -14,7 +14,7 @@ spec:
     - backendRefs:
         - kind: TraefikService
           name: api@internal
-          port: 80
+          port: 8000
           namespace: default
       matches:
         - path:
