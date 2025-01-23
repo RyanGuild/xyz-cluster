@@ -20,9 +20,9 @@ spec:
           from: All
       tls:
         mode: Terminate
-        certificateRef:
-          name: traefik-localhost-tls
-          namespace: default
+        certificateRefs:
+          - name: traefik-localhost-tls
+            namespace: default
   hostname: ryanguild.localhost
   addresses:
     - type: Hostname
