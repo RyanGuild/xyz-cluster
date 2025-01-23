@@ -23,7 +23,6 @@ spec:
         certificateRefs:
           - name: traefik-localhost-tls
             namespace: default
-  hostname: ryanguild.localhost
   addresses:
     - type: Hostname
       value: ryanguild.localhost

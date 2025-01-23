@@ -20,7 +20,6 @@ spec:
     - name: grpc
       port: 50051
       protocol: GRPC
-  hostname: ryanguild.xyz
   addresses:
     - type: Hostname
       value: ryanguild.xyz
