@@ -24,8 +24,8 @@ spec:
               experimentalChannel: true
             kubernetesIngress:
               enabled: false
-          # gateway:
-          #   enabled: false
+          gateway:
+            enabled: false
           #   listeners:
           #     web:
           #       port: 8000
