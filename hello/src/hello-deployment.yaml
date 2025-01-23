@@ -47,7 +47,7 @@ spec:
     - name: traefik-localhost-gateway
       namespace: default
   hostnames:
-    - "hello.ryanguild.localhost"
+    - hello.ryanguild.localhost
   rules:
     - matches:
         - path:
