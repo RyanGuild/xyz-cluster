@@ -12,13 +12,5 @@ spec:
   dnsNames:
     - ryanguild.localhost
     - "*.ryanguild.localhost"
-    - argocd.ryanguild.localhost
-    - www.argocd.ryanguild.localhost
-    - hello.ryanguild.localhost
-    - www.hello.ryanguild.localhost
-    - keycloak.ryanguild.localhost
-    - www.keycloak.ryanguild.localhost
-    - traefik.ryanguild.localhost
-    - www.traefik.ryanguild.localhost
   duration: 2160h # 90 days
   renewBefore: 360h # 15 days
