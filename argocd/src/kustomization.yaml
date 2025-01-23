@@ -1,22 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-# 1) Specify the Helm chart to be rendered
-helmCharts:
-  - name: argo/argo-cd                      # The name of the chart
-    releaseName: argocd             # Helm release name
-    version: 7.7.16                         # Chart version
-    repo: https://argoproj.github.io/argo-helm/         # Helm chart repository
-    valuesFile: values.yaml                  # Override values
-    includeCRDs: true                       # If the chart has CRDs, set to true
-    # optionally specify 'forceUpgrade: true' if needed
-
 # 2) Optional common namespace or name prefix
-namespace: my-namespace
+namespace: default
 
 # 3) Patches to modify specific objects after the Helm chart is rendered
 patches:
-  - path: patches/argo-cd.yaml
+  - path: argo-cm.yaml
     target:
       kind: ConfigMap
       # You can narrow down which ConfigMap to patch by name
@@ -24,4 +13,4 @@ patches:
       # or by label selectors, etc.
 
 resources:
-  - resources/gateway-routes.yaml
+  - gateway-routes.yaml
