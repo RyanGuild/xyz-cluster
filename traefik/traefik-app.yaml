@@ -21,6 +21,9 @@ spec:
           ingressRoute:
             dashboard:
               enabled: true
+              entryPoints:
+                - web
+                - traefik
           providers:
             kubernetesGateway:
               enabled: true
