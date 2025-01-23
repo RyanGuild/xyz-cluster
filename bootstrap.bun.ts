@@ -11,6 +11,6 @@ await $`argocd login --core --name admin --password ${argoPassword}`
 
 await $`kubectl apply -f ./project.yaml`
 
-await $`kubectl port-forward svc/argocd-server -n default 8080:80`
+await import("./argocd-server.bun.ts")
 
 
