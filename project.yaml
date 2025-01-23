@@ -48,10 +48,10 @@ spec:
       path: traefik
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
-      path: argocd
-    - repoURL: https://github.com/ryanguild/xyz-cluster.git
-      targetRevision: main
-      path: certmanager
+    #   path: argocd
+    # - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    #   targetRevision: main
+    #   path: certmanager
   destination:
     server: https://kubernetes.default.svc
     namespace: default
