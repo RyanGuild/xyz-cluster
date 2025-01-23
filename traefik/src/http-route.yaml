@@ -11,11 +11,8 @@ spec:
     - hostnames:
         - "traefik.ryanguild.localhost"
       backendRefs:
-        - name: traefik-dashboard
-          port: 80
-          kind: Service
-          group: ""
-          weight: 1
+        - name: api@internal
+          kind: TraefikService
       matches:
         - path:
             type: PathPrefix
