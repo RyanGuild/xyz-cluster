@@ -39,7 +39,7 @@ console.log(helmRepos);
 
 
 console.log("Checking for Argo CD CLI...");
-export let argoVersion = await $`argocd version --core --output json`.json();
+export let argoVersion = await $`argocd version --core --output json`.json().catch(console.error);
 if (!argoVersion || !argoVersion?.client?.Version) {
   throw new Error("Argo CD CLI not found");
 }
