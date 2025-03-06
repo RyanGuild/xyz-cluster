@@ -18,7 +18,7 @@ spec:
           hostname: keycloak.ryanguild.xyz
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: keycloak
   syncPolicy:
     automated:
       prune: true
