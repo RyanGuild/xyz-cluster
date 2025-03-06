@@ -1,6 +1,7 @@
 #!bun
 import { $ } from "bun";
 import path from "node:path";
+import process from "node:process";
 
 // Get the first argument from the command line
 const targetFolder = process.argv[2] ||
