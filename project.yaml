@@ -33,9 +33,9 @@ metadata:
 spec:
   project: xyz
   sources:
-    - repoURL: https://github.com/ryanguild/xyz-cluster.git
-      targetRevision: main
-      path: keycloak
+    # - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    #   targetRevision: main
+    #   path: keycloak
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: hello
