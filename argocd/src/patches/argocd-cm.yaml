@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: argocd-cm
-data:
-  url: https://argocd.ryanguild.localhost
-  kustomize.buildOptions: --enable-helm
