@@ -18,6 +18,8 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: kube-system
       server: https://kubernetes.default.svc
+    - namespace: ngrok
+      server: https://kubernetes.default.svc
   # Optionally, specify which kinds of cluster/namespaced resources are allowed
   # If you trust the chart fully, you can keep them broad:
   clusterResourceWhitelist:
@@ -41,6 +43,9 @@ spec:
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: hello
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: ngrok
   destination:
     server: https://kubernetes.default.svc
     namespace: default
