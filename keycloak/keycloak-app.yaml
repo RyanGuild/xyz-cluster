@@ -22,7 +22,7 @@ spec:
             auth:
               username: bn_keycloak
               database: bitnami_keycloak
-              existingSecret: "keycloak-secret"
+              existingSecret: "keycloak-postgresql-custom"
               secretKeys:
                 userPasswordKey: password
   destination:
