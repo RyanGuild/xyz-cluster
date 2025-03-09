@@ -17,14 +17,14 @@ spec:
           enabled: true
           hostname: keycloak.ryanguild.xyz
           ingressClassName: ngrok
-          postgresql:
-            enabled: true
-            auth:
-              username: bn_keycloak
-              database: bitnami_keycloak
-              existingSecret: "keycloak-postgresql-custom"
-              secretKeys:
-                userPasswordKey: password
+        postgresql:
+          enabled: true
+          auth:
+            username: bn_keycloak
+            database: bitnami_keycloak
+            existingSecret: "keycloak-postgresql-custom"
+            secretKeys:
+              userPasswordKey: password
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
