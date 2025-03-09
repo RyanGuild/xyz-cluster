@@ -46,9 +46,9 @@ spec:
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: ngrok
-    - repoURL: https://github.com/ryanguild/xyz-cluster.git
-      targetRevision: main
-      path: vault
+    # - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    #   targetRevision: main
+    #   path: vault
   destination:
     server: https://kubernetes.default.svc
     namespace: default
