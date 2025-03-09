@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.ngrok.com/ngrok
+    repoURL: https://charts.ngrok.com
     targetRevision: 0.17.0
     chart: ngrok-operator
   destination:
