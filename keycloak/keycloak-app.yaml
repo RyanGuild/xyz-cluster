@@ -10,12 +10,13 @@ spec:
     chart: keycloak
     targetRevision: 10.0.0
     helm:
-      values: |
+      valuesObject:
         service:
           type: ClusterIP
         ingress:
           enabled: true
           hostname: keycloak.ryanguild.xyz
+          ingressClassName: ngrok
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
