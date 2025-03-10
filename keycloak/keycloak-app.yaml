@@ -15,6 +15,11 @@ spec:
           enabled: true
           hostname: keycloak.ryanguild.xyz
           ingressClassName: ngrok
+        auth:
+          existingSecret: keycloak-auth
+        postgres:
+          auth:
+            existingSecret: keycloak-postgresql
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
