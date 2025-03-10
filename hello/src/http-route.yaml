@@ -10,5 +10,5 @@ spec:
       namespace: ngrok
   rules:
     - backendRefs:
-        - name: hello-service
-          namespace: hello
+        - name: hello
+          
