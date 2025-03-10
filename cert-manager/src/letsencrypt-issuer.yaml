@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-issuer
+  namespace: cert-manager
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: rdg27@pitt.edu
+    privateKeySecretRef:
+      name: letsencrypt-secret
+      solvers:
+      - http01:
+        gatewayHTTPRoute:
+          parentRefs:
+            - group: networking.k8s.io
+              kind: Gateway
+              name: ngrok-gateway
+              namespace: ngrok
