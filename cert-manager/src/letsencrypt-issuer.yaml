@@ -11,9 +11,9 @@ spec:
       name: letsencrypt-secret
     solvers:
     - http01:
-      gatewayHTTPRoute:
-        parentRefs:
-          - group: networking.k8s.io
-            kind: Gateway
-            name: ngrok-gateway
-            namespace: ngrok
+        gatewayHTTPRoute:
+          parentRefs:
+            - group: networking.k8s.io
+              kind: Gateway
+              name: ngrok-gateway
+              namespace: ngrok
