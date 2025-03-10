@@ -11,8 +11,6 @@ spec:
     targetRevision: 24.4.11
     helm:
       valuesObject:
-        service:
-          type: ClusterIP
         ingress:
           enabled: true
           hostname: keycloak.ryanguild.xyz
