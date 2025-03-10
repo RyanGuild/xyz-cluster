@@ -46,6 +46,9 @@ spec:
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: ngrok
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: cert-manager
     - repoURL: https://github.com/kubernetes-sigs/gateway-api
       targetRevision: v1.2.0
       path: config/crd/experimental
