@@ -11,4 +11,5 @@ spec:
   rules:
     - backendRefs:
         - name: hello
+          port: 80
           
