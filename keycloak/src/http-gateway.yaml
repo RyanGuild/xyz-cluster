@@ -1,5 +1,5 @@
 apiVersion: gateway.networking.k8s.io/v1
-kind: Gateway
+kind: httproute
 metadata:
   name: http-gateway
 spec:
@@ -9,9 +9,13 @@ spec:
     port: 80
     protocol: HTTP
     hostname: keycloak.ryanguild.xyz
-  routes:
-  - match: /
-    action:
-      forwardTo:
-      - serviceName: keycloak
-        port: 80
+  hostnames:
+    - keycloak.ryanguild.xyz
+  parentRefs:
+    - name: ngrok
+      namespace: ngrok
+  rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /
