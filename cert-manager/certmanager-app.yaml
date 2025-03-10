@@ -4,7 +4,7 @@ metadata:
   name: cert-manager
   namespace: argocd
 spec:
-  project: default
+  project: xyz
   sources:
   - repoURL: https://github.com/ryanguild/xyz-cluster.git
     targetRevision: main

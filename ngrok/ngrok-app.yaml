@@ -4,7 +4,7 @@ metadata:
   name: ngrok-operator
   namespace: argocd
 spec:
-  project: default
+  project: xyz
   sources:
   - repoURL: https://charts.ngrok.com
     targetRevision: 0.17.0
