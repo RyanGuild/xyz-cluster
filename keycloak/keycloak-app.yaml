@@ -12,7 +12,7 @@ spec:
     helm:
       values: |
         ingress:
-          enabled: true
+          enabled: false
           hostname: keycloak.ryanguild.xyz
           ingressClassName: ngrok
         auth:
