@@ -13,6 +13,9 @@ spec:
       allowedRoutes:
         kinds:
           - kind: HTTPRoute
+        namespaces:
+          from: All
+          to: All
     
 
   
