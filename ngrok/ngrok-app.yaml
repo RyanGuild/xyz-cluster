@@ -10,7 +10,7 @@ spec:
     targetRevision: 0.17.0
     chart: ngrok-operator
     helm:
-      valuesObject:
+      values: |
         gateway:
           enabled: true
         ingress:
