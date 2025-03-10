@@ -9,7 +9,7 @@ spec:
   - repoURL: https://charts.ngrok.com
     targetRevision: 0.17.0
     chart: ngrok-operator
-    values: |
+    valuesObject:
       gateway:
         enabled: true
       ingress:
