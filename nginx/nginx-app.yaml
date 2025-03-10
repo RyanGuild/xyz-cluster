@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: ghcr.io/nginxinc/charts/nginx-gateway-fabric
+      chart: nginx-gateway-fabric
+      targetRevision: 1.5.1
+    - repoURL: https://github.com/ryanguild/xyz-cluster.git
+      targetRevision: main
+      path: nginx/src
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
