@@ -9,7 +9,6 @@ spec:
     - name: ngrok-gateway
       namespace: ngrok
   rules:
-    - matches:
-      - backendRefs:
-          - name: keycloak
-            port: 80
+    - backendRefs:
+        - name: keycloak
+          port: 80
