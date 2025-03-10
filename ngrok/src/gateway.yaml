@@ -12,10 +12,10 @@ spec:
       hostname: ryanguild.xyz
       allowedRoutes:
         kinds:
-          - kind: HTTPRoute
+          - group: gateway.networking.k8s.io
+            kind: HTTPRoute
         namespaces:
           from: All
-          to: All
     
 
   
