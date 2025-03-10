@@ -9,7 +9,6 @@ spec:
     - name: ngrok-gateway
       namespace: ngrok
   rules:
-    - matches:
-      - path:
-          type: PathPrefix
-          value: /
+    - backendRefs:
+        - name: hello-service
+          namespace: hello
