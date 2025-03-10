@@ -10,10 +10,7 @@ spec:
       name: localhost-gateway
       namespace: nginx
   rules:
-    - matches:
-        - path:
-            type: Prefix
-            value: /
-      forwardTo:
-        - serviceName: my-service
+    - backendRefs:
+        - kind: Service
+          name: argo-cd-argocd-server
           port: 80
