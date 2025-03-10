@@ -4,12 +4,6 @@ metadata:
   name: keycloak-http-route
   namespace: keycloak
 spec:
-  gatewayClassName: ngrok
-  listeners:
-  - name: http-listener
-    port: 80
-    protocol: HTTP
-    hostname: keycloak.ryanguild.xyz
   hostnames:
     - keycloak.ryanguild.xyz
   parentRefs:
