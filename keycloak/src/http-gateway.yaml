@@ -1,7 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: httproute
 metadata:
-  name: http-gateway
+  name: keycloak-http-route
 spec:
   gatewayClassName: ngrok
   listeners:
