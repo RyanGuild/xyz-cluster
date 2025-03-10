@@ -11,6 +11,8 @@ spec:
       targetRevision: 7.8.9
       helm:
         releaseName: argo-cd
+        valuesObject:
+          fullnameOverride: argocd
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: argocd/src
