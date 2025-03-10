@@ -5,10 +5,13 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://charts.ngrok.com
+  sources:
+  - repoURL: https://charts.ngrok.com
     targetRevision: 0.17.0
     chart: ngrok-operator
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: ngrok/src
   destination:
     server: https://kubernetes.default.svc
     namespace: ngrok
