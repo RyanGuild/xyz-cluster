@@ -9,6 +9,11 @@ spec:
   - repoURL: https://charts.ngrok.com
     targetRevision: 0.17.0
     chart: ngrok-operator
+    valuesObject:
+      gateway:
+        enabled: true
+      ingress:
+        enabled: false
   - repoURL: https://github.com/ryanguild/xyz-cluster.git
     targetRevision: main
     path: ngrok/src
