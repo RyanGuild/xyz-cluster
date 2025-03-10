@@ -28,6 +28,9 @@ spec:
           from: All
       tls:
         mode: Terminate
+        certificateRef:
+          name: gateway-tls-cert-secret
+          namespace: ngrok
     
 
   
