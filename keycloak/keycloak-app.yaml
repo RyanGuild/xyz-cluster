@@ -10,7 +10,7 @@ spec:
     chart: keycloak
     targetRevision: 24.4.11
     helm:
-      valuesObject:
+      values: |
         ingress:
           enabled: true
           hostname: keycloak.ryanguild.xyz
