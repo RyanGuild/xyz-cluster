@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   project: xyz
-  source:
-    repoURL: registry-1.docker.io/bitnamicharts
+  sources:
+  - repoURL: registry-1.docker.io/bitnamicharts
     chart: keycloak
     targetRevision: 24.4.11
     helm:
@@ -20,6 +20,9 @@ spec:
         postgresql:
           auth:
             existingSecret: keycloak-postgresql
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: keycloak/src
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
