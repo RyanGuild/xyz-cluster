@@ -7,7 +7,7 @@ spec:
   hostnames:
     - hello.ryanguild.xyz
   parentRefs:
-    - name: ngrok
+    - name: ngrok-gateway
       namespace: ngrok
   rules:
     - matches:

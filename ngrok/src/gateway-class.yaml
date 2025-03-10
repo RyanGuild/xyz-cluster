@@ -1,6 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: GatewayClass
 metadata:
-  name: ngrok
+  name: ngrok-gateway-class
+  namespace: ngrok
 spec:
   controllerName: ngrok.com/gateway-controller

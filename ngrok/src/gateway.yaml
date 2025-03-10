@@ -1,11 +1,18 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: ngrok
+  name: ngrok-gateway
+  namespace: ngrok
 spec:
-  gatewayClassName: ngrok
+  gatewayClassName: ngrok-gateway-class
   listeners:
-    - name: http-listener
+    - name: ngrok-web
       protocol: HTTP
       port: 80  
       hostname: ryanguild.xyz
+      allowedRoutes:
+        kinds:
+          - kind: HTTPRoute
+    
+
+  
