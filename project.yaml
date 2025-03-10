@@ -46,9 +46,10 @@ spec:
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: ngrok
-    # - repoURL: https://github.com/ryanguild/xyz-cluster.git
-    #   targetRevision: main
-    #   path: vault
+    - repoURL: https://github.com/kubernetes-sigs/gateway-api
+      targetRevision: v1.2.0
+      path: .
+      chart: standard-install
   destination:
     server: https://kubernetes.default.svc
     namespace: default
