@@ -27,7 +27,7 @@ spec:
         namespaces:
           from: All
       tls:
-        mode: TERMINATE
+        mode: Terminate
     
 
   
