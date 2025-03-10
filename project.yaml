@@ -14,12 +14,17 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: keycloak
       server: https://kubernetes.default.svc
+    - namespace: ngrok
+      server: https://kubernetes.default.svc
+    - namespace: cert-manager
+      server: https://kubernetes.default.svc
+    - namespace: nginx
+      server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc
     - namespace: kube-system
       server: https://kubernetes.default.svc
-    - namespace: ngrok
-      server: https://kubernetes.default.svc
+    
   # Optionally, specify which kinds of cluster/namespaced resources are allowed
   # If you trust the chart fully, you can keep them broad:
   clusterResourceWhitelist:
