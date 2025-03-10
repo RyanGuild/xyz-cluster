@@ -10,6 +10,6 @@ spec:
       namespace: ngrok
   rules:
     - backendRefs:
-        - name: hello
+        - name: hello-service
           port: 80
           
