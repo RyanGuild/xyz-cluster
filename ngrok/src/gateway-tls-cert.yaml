@@ -7,9 +7,6 @@ spec:
   secretName: gateway-tls-cert-secret
   duration: 2160h # 90d
   renewBefore: 360h # 15d
-  subject:
-    organizations:
-      - ryanguild.xyz
   commonName: ryanguild.xyz
   dnsNames:
     - ryanguild.xyz
