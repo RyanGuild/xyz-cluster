@@ -5,15 +5,21 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://charts.jetstack.io'
+  sources:
+  - repoURL: https://github.com/ryanguild/xyz-cluster.git
+    targetRevision: main
+    path: cert-manager/src
+  - repoURL: 'https://charts.jetstack.io'
     chart: cert-manager
     targetRevision: v1.17.1
     helm:
+      parameters:
       valuesObject:
         installCRDs: true
         namespace: cert-manager
         fullnameOverride: cert-manager
+        extraArgs:
+          - --enable-gateway-api
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
