@@ -6,9 +6,9 @@ metadata:
 spec:
   project: xyz
   sources:
-    - repoURL: ghcr.io/nginxinc/charts
+    - repoURL: ghcr.io/nginx/charts
       chart: nginx-gateway-fabric
-      targetRevision: 1.5.1
+      targetRevision: 1.6.2
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
       path: nginx/src
