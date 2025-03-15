@@ -6,10 +6,17 @@ metadata:
 spec:
   gatewayClassName: nginx
   listeners:
-    - name: localhost
-      protocol: HTTP
-      port: 80
+    - allowedRoutes:
+        namespaces:
+          from: Same
       hostname: localhost
+      name: same-namespace
+      port: 80
+      protocol: HTTP
+    - hostname: localhost
+      name: localhost
+      port: 80
+      protocol: HTTP
       routes:
         kind: HTTPRoute
         namespaces:
