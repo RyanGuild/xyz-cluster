@@ -10,7 +10,3 @@ spec:
       name: localhost
       port: 80
       protocol: HTTP
-      routes:
-        kind: HTTPRoute
-        namespaces:
-          from: All
