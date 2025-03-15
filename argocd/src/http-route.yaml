@@ -17,5 +17,3 @@ spec:
           name: argo-cd-argocd-server
           namespace: argocd
           port: 443
-          tls:
-            mode: Passthrough
