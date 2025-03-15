@@ -18,7 +18,7 @@ helm repo add argo https://argoproj.github.io/argo-helm --force-update
 helm repo update
 
 echo "Creating 'argocd' namespace (if it doesn't already exist)..."
-kubectl create namespace argo-cd --dry-run=client -o yaml | kubectl apply -f -
+kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
 
 echo "Installing ArgoCD using Helm..."
 if helm status argo-cd --namespace argocd > /dev/null 2>&1; then

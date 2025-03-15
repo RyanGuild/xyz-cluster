@@ -24,6 +24,8 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc
+    - namespace: external-secrets
+      server: https://kubernetes.default.svc
     - namespace: kube-system
       server: https://kubernetes.default.svc
     
@@ -64,7 +66,7 @@ spec:
       path: nginx
     - repoURL: https://github.com/ryanguild/xyz-cluster.git
       targetRevision: main
-      path: vault
+      path: external-secrets
     - repoURL: https://github.com/kubernetes-sigs/gateway-api
       targetRevision: v1.2.0
       path: config/crd/experimental
